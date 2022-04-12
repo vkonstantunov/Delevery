@@ -16,20 +16,20 @@ logging.basicConfig(level=logging.INFO)
 
 @dp.message_handler(commands="start")
 async def process_start_command(message: types.Message):
-    await message.answer(f"{message.chat.first_name} Выберите нужный вам ресторан",reply_markup=buttons.replykb)
+    await message.answer(f"{message.chat.first_name} Выберите нужный вам ресторан",reply_markup=buttons.replykb1)
     print("Нажата кнопка старт")
 
 
 @dp.message_handler(content_types="text")
 async def process_start_command(message: types.Message):
     if message.text ==  "Ресторан1":
-        await message.answer(f"{message.chat.first_name} Выберите нужный вам ресторан", reply_markup=buttons.button(message.chat.first_name))
+        await message.answer(f"{message.chat.first_name} Вы выбрали {message.text}",reply_markup=buttons.replykb)
     elif message.text == "Ресторан2":
-        await message.answer(f"{message.chat.first_name} Выберите нужный вам ресторан",
-                             reply_markup=buttons.button("точно это место?"))
+        await message.answer(f"{message.chat.first_name} Вы выбрали {message.text}",
+                             reply_markup=buttons.replykb)
     elif message.text == "Ресторан3":
-        await message.answer(f"{message.chat.first_name} Выберите нужный вам ресторан",
-                             reply_markup=buttons.button(message.chat.first_name))
+        await message.answer(f"{message.chat.first_name} Вы выбрали {message.text}",
+                             reply_markup=buttons.replykb)
 
 
 
