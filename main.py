@@ -4,6 +4,7 @@ from aiogram.utils import executor
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 import logging
 import buttons
+from func import *
 from config import TOKEN
 
 
@@ -23,13 +24,23 @@ async def process_start_command(message: types.Message):
 @dp.message_handler(content_types="text")
 async def process_start_command(message: types.Message):
     if message.text ==  "Ресторан1":
-        await message.answer(f"{message.chat.first_name} Вы выбрали {message.text}",reply_markup=buttons.replykb)
+        await message.answer_photo(image("photo/logo/1629125620_content_700x455.jpg"),
+                                   f"{message.chat.first_name} Вы выбрали {message.text}",
+                             reply_markup=buttons.replykb)
     elif message.text == "Ресторан2":
-        await message.answer(f"{message.chat.first_name} Вы выбрали {message.text}",
+        await message.answer_photo(image("photo/logo/1629125620_content_700x455.jpg"),
+                             f"{message.chat.first_name} Вы выбрали {message.text}",
                              reply_markup=buttons.replykb)
     elif message.text == "Ресторан3":
-        await message.answer(f"{message.chat.first_name} Вы выбрали {message.text}",
+        await message.answer_photo(image("photo/logo/1629125620_content_700x455.jpg"),
+                             f"{message.chat.first_name} Вы выбрали {message.text}",
                              reply_markup=buttons.replykb)
+
+
+@dp.message_handler(content_types="text")
+async def pr(message: types.Message):
+    if message.text == "Оформить заказ":
+        await message.answer("Ведите свои данные", reply_markup=buttons.replykb1)
 
 
 

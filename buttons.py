@@ -6,10 +6,11 @@ from aiogram.types import ReplyKeyboardRemove, \
 menu =  KeyboardButton('Меню')
 help = KeyboardButton('Помощь')
 basket = KeyboardButton('Корзина')
+finish = KeyboardButton("Оформить заказ")
 restoran1 = KeyboardButton('Ресторан1')
 restoran2 = KeyboardButton('Ресторан2')
 restoran3 = KeyboardButton('Ресторан3')
-replykb = ReplyKeyboardMarkup(resize_keyboard=True, row_width=2).add(menu,help,basket)
+replykb = ReplyKeyboardMarkup(resize_keyboard=True, row_width=2).add(menu,help,basket,finish)
 replykb1 = ReplyKeyboardMarkup(resize_keyboard=True, row_width=2).add(restoran1,restoran2,restoran3)
 
 
